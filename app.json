@@ -2,6 +2,31 @@
   "expo": {
     "name": "to-do-list",
     "slug": "to-do-list",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "icon": "./src/assets/icon.png",
+    "splash": {
+      "image": "./src/assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "platforms": ["ios", "android"],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.felipijohnny.todolist"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./src/assets/icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7a508f94-7b3c-4b02-a613-beda37c58dd5"
+      }
+    }
   }
 }
