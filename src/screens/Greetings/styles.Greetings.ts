@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components/native";
 
 export const GreetingsContainer = styled(SafeAreaView)`
-flex: 1;
+  flex: 1;
   align-items: center;
   justify-content: center;
   padding: ${({ theme }) => theme.spacing.xl}px;

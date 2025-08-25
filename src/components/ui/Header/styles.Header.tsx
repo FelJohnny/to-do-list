@@ -5,9 +5,19 @@ export const ContainerHeader = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.secondary};
   height: ${({ theme }) => theme.layout.headerHeight}px;
   padding: ${({ theme }) => theme.spacing.md}px;
+
+  /* iOS Shadow */
+  shadow-color: ${({ theme }) => theme.shadow.small.shadowColor};
+  shadow-offset: ${({ theme }) => theme.shadow.small.shadowOffset.width}px
+    ${({ theme }) => theme.shadow.small.shadowOffset.height}px;
+  shadow-opacity: ${({ theme }) => theme.shadow.small.shadowOpacity};
+  shadow-radius: ${({ theme }) => theme.shadow.small.shadowRadius}px;
+
+  /* Android Shadow */
+  elevation: ${({ theme }) => theme.shadow.small.elevation};
 `;
 
 export const GreetingHeaderWrapper = styled.View`

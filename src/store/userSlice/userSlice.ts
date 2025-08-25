@@ -3,6 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "..";
 
 const USER_STORAGE_KEY = "@todoapp:userName";
+
 //busca o usuario do storage do dispositivo
 export const loadUserFromStorage = createAsyncThunk(
   'user/loadFromStorage',
@@ -11,6 +12,7 @@ export const loadUserFromStorage = createAsyncThunk(
     return savedName;
   }
 );
+
 //salva o usuario no storage do dispositivo
 export const saveUserToStorage = createAsyncThunk(
   'user/saveToStorage', 
