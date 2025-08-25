@@ -16,17 +16,21 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { ToDoScreenNavigationProp } from "../../../screens/ToDo/Todo";
 import { getFullGreeting } from "../../../utils/greetings";
+import { selectTodos } from "../../../store/todoSlice/todoSlice";
 
 export default function Header() {
   const userName = useAppSelector(selectUserName);
   const dispatch = useAppDispatch();
   const navigation = useNavigation<ToDoScreenNavigationProp>();
+  const todos = useAppSelector(selectTodos);
 
   async function logoff() {
     await dispatch(removeUserFromStorage());
     navigation.navigate("greetings");
   }
   const greetingMessage = getFullGreeting(userName);
+  const pendingTodos = todos.filter((todo) => !todo.completed).length;
+  const completedTodos = todos.filter((todo) => todo.completed).length;
 
   if (userName)
     return (
@@ -37,7 +41,9 @@ export default function Header() {
         </GreetingHeaderWrapper>
         <LogoWrapperHeader>
           <LogoIconHeader />
-          <TodoResume>0/0</TodoResume>
+          <TodoResume>
+            {pendingTodos}/{completedTodos}
+          </TodoResume>
           <Button title="Sair" onPress={logoff} />
         </LogoWrapperHeader>
       </ContainerHeader>
