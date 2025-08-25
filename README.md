@@ -69,7 +69,7 @@ yarn install
 
 ```bash
 # Instalar dependências de desenvolvimento (se necessário)
-npm install --save-dev
+npm install
 
 # Verificar se todas as dependências estão instaladas
 npm list --depth=0
@@ -102,6 +102,7 @@ npm run android
 # OU
 npx expo run:android
 ```
+
 ### Usando o App Expo Go (Desenvolvimento Rápido)
 
 1. Instale o **Expo Go** no seu dispositivo móvel
