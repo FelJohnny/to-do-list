@@ -51,7 +51,7 @@ eas --version
 ### 2. Clone do Repositório
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/FelJohnny/to-do-list.git
 cd to-do-list
 ```
 
