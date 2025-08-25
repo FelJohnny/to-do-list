@@ -56,7 +56,7 @@ export default function AddToDo() {
       />
 
       <AddButton disabled={disabled} onPress={handleAddTodo}>
-        <AddIcon disabled={disabled} />
+        <AddIcon />
       </AddButton>
     </InputTextWrapper>
   );
