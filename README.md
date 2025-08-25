@@ -102,25 +102,6 @@ npm run android
 # OU
 npx expo run:android
 ```
-
-**Para iOS (apenas macOS):**
-
-```bash
-# Executar em simulador iOS
-npm run ios
-# OU
-npx expo run:ios
-```
-
-**Para Web:**
-
-```bash
-# Executar versão web
-npm run web
-# OU
-npx expo start --web
-```
-
 ### Usando o App Expo Go (Desenvolvimento Rápido)
 
 1. Instale o **Expo Go** no seu dispositivo móvel
