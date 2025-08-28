@@ -10,6 +10,8 @@ import {
   GreetingHeaderWrapper,
   LogoIconHeader,
   LogoWrapperHeader,
+  MenuBtnIcon,
+  MenuBtnWrapper,
   SubTitleHeader,
   TodoResume,
 } from "./styles.Header";
@@ -24,10 +26,11 @@ export default function Header() {
   const navigation = useNavigation<ToDoScreenNavigationProp>();
   const todos = useAppSelector(selectTodos);
 
-  async function logoff() {
-    await dispatch(removeUserFromStorage());
-    navigation.navigate("greetings");
-  }
+  const openDrawer = () => {
+    // @ts-ignore - O TypeScript pode reclamar, mas funciona
+    navigation.openDrawer();
+  };
+
   const greetingMessage = getFullGreeting(userName);
   const pendingTodos = todos.filter((todo) => !todo.completed).length;
   const completedTodos = todos.filter((todo) => todo.completed).length;
@@ -44,7 +47,10 @@ export default function Header() {
           <TodoResume>
             {pendingTodos}/{completedTodos}
           </TodoResume>
-          <Button title="Sair" onPress={logoff} />
+
+          <MenuBtnWrapper onPress={openDrawer}>
+            <MenuBtnIcon />
+          </MenuBtnWrapper>
         </LogoWrapperHeader>
       </ContainerHeader>
     );

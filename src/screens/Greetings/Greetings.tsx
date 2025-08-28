@@ -18,21 +18,12 @@ import {
   saveUserToStorage,
   setUserName,
 } from "../../store/userSlice/userSlice";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { ToDoNavigationParamList } from "../../navigations/ToDoNavigator";
-import { useNavigation } from "@react-navigation/native";
-
-type GreetingsScreenNavigationProp = NativeStackNavigationProp<
-  ToDoNavigationParamList,
-  "greetings"
->;
 
 export default function GreetingsScreen() {
   const limitChar = 2;
   const [name, setName] = React.useState("");
   const [disabled, setDisabled] = React.useState(true);
   const [erroMessage, setErroMessage] = React.useState(false);
-  const navigation = useNavigation<GreetingsScreenNavigationProp>();
   const dispatch = useAppDispatch();
 
   //validador input
@@ -50,7 +41,6 @@ export default function GreetingsScreen() {
     try {
       dispatch(setUserName(name));
       await dispatch(saveUserToStorage(name));
-      navigation.navigate("todo");
     } catch (error) {
       console.log(error);
     }

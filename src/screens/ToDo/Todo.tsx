@@ -7,7 +7,7 @@ import ListAllTodo from "../../components/ListAllTodo/ListAllTodo";
 
 export type ToDoScreenNavigationProp = NativeStackNavigationProp<
   ToDoNavigationParamList,
-  "todo"
+  "AuthenticatedScreens"
 >;
 
 export default function TodoScreen() {

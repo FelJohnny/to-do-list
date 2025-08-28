@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "./src/theme/theme";
 import { Provider as ReduxProvider } from "react-redux";
 import store from "./src/store";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <ThemeProvider theme={theme}>
           <NavigationContainer>
             <ToDoNavigator />
+            <StatusBar style="light" translucent={true} />
           </NavigationContainer>
         </ThemeProvider>
       </ReduxProvider>

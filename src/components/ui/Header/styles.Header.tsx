@@ -1,4 +1,4 @@
-import { CheckCircle } from "lucide-react-native";
+import { CheckCircle, Menu } from "lucide-react-native";
 import styled from "styled-components/native";
 
 export const ContainerHeader = styled.View`
@@ -49,3 +49,10 @@ export const LogoIconHeader = styled(CheckCircle).attrs(({ theme }) => ({
 export const TodoResume = styled.Text`
   color: ${({ theme }) => theme.colors.text.secondary};
 `;
+
+export const MenuBtnWrapper = styled.TouchableOpacity``;
+
+export const MenuBtnIcon = styled(Menu).attrs(({ theme }) => ({
+  size: 30,
+  color: theme.colors.text.primary,
+}))``;
